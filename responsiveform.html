@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive forms</title>
+    <style>
+        *
+        {
+
+            background-color:rgb(216, 255, 205);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: medium;
+            font-style: italic;
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <h2>Registartion form:</h2>
+
+    <form action="p1.php">
+    <div class="container">
+        <label for="Firstname">Firstname:</label>
+        <div>
+        <input type="text" name="Fisrtname">
+        </div>
+        
+        <br>
+        
+        <label for="Lastname">Lastname:</label>
+        <div>
+            <input type="text" name="Lastname">
+        </div>
+        <br>
+
+        <label for="address">Address:</Address></label>
+
+        <div>
+            <textarea name="address" id="" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+
+        <label for="email">Email:</label>
+
+        <div>
+            <input type="email" name="email" id="">
+
+        </div>
+        <br>
+
+        <label for="password">Email password:</label>
+
+        <div>
+            <input type="password" name="password" id="password">
+        </div>
+        
+        <br>
+         
+        <label for="telephonenumber">PhoneNumber:</label>
+        <div>
+            <input type="tel" name="telphonenumber" id="">
+        </div>    
+        <br>
+
+        <label for="gender">Gender:</label>
+        <div>Male<input type="radio" name="gender" id="">Female<input type="radio" name="gender" id="">other<input type="radio" name="gender" id="">
+        </div>
+        <br>
+
+        <label for="hobbies">Hobbies:</label>
+        <div>
+            Singing<input type="checkbox">
+            Reading<input type="checkbox">
+            Traveling<input type="checkbox">
+        </div>
+
+        <br>
+
+        <label for="country">Country:</label>
+        <select name="Mycountry" id="country">
+            <option value="India">India</option>
+            <option value="US">US</option>
+            <option value="canada">Canada</option>
+        </select>
+
+        <br>
+
+        <label for="submit">Submit:</label>
+        <div>
+            <input type="submit" value="SubmitNow">
+        </div>
+
+        <br>
+
+        <label for="reset">Reset:</label>
+        <div>
+            <input type="reset" value="ResetNow">
+        </div>
+
+        <br>    
+    </div>
+    </form>
+</body>
+</html>
