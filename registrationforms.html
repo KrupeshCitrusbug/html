@@ -10,54 +10,172 @@
 <body>
     <div class="container">
         <div class="heading">Registration</div>
-        <form action="#">
+        <form action="#" onsubmit="return validation()">
             <div class="card-details">
 
                 <div class="card-box">
                     <span class="details">Full Name</span>
-                    <input type="text" placeholder="Enter your name">
+                    <input type="text"  name="fname"  placeholder="Enter your firstname" autocomplete="off" id="fname" >
+                    <span id="fnamee" class="text-danger font-weight-bold"></span>
+                    
                 </div>
 
                 <div class="card-box">
-                    <span class="details">User Name</span>
-                    <input type="text" placeholder="Enter your  username">
+                    <span class="details">Last Name</span>
+                    <input type="text" name="lname"  placeholder="Enter your lastname" autocomplete="off"  id="lname">
+                    <span id="lnamee"></span>             
+
                 </div>
 
                 <div class="card-box">
                     <span class="details">Email</span>
-                    <input type="email" placeholder="Enter your email">
+                    <input type="email"  name="email" placeholder="Enter your email"  autocomplete="off"  id="email">
+                    <span id="emaill"></span>
                 </div>
 
                 <div class="card-box">
                     <span class="details">Phone Number</span>
-                    <input type="number" placeholder="Phone Number">
+                    <input type="number"  name="phone" placeholder="Phone Number" id="phone">
+                    <span id="phoneee"></span>
                 </div>
 
                 <div class="card-box">
                     <span class="details">Password</span>
-                    <input type="password" placeholder="Enter your password">
+                    <input type="password" name="pass" placeholder="Enter your password" id="pass">
+                    <span id="passs"></span>
                 </div>
 
                 <div class="card-box">
                     <span class="details">Confirm Password</span>
-                    <input type="password" placeholder="Confirm password">
+                    <input type="password" name="conpass" placeholder="Confirm password" id="conpass">
+                    <span id="conpasss"></span>
                 </div>
             </div>
-
+            
+            <!-- radio button -->
             <div class="circal-form">
                 <span class="circal-title">Gender</span>
                 <div class="category">
                     <input type="radio" name="gender">Male
                     <input type="radio" name="gender">FeMale
-                    <input type="radio" name="gender">Other    
+                    <input type="radio" name="gender">Other 
                 </div>
             </div>
 
+            <!-- checkbox -->
+            <div class="circal-form">
+                <span class="circal-title">Hobbies</span>
+                <div class="category">
+                    <input type="checkbox" name="Hobbies">Cricket
+                    <input type="checkbox" name="Hobbies">Chess
+                    <input type="checkbox" name="Hobbies">Tennis   
+                </div>
+            </div>
+
+            <!-- images 
+            <img src="smiley.gif" alt="Smiley face" width="42" height="42" style="border:5px solid black">
+            -->
+    
+            <!-- file option menu 
+            <input class="file-upload-input" type="file" onchange="readURL(this)" accept="Image/*">
+            -->
+
+            <!-- button  -->
             <div class="button">
-                <input type="submit" value="Register">
-            </div>       
+                <input type="submit" value="submit">
+            </div>  
+
         </form>
     </div>
+<script type="text/javascript">
 
+   
+
+    function validation(){
+
+    document.getElementById('fnamee').innerHTML="";
+    document.getElementById('lnamee').innerHTML="";
+    document.getElementById('emaill').innerHTML="";
+    document.getElementById('phoneee').innerHTML="";
+    document.getElementById('passs').innerHTML="";
+    document.getElementById('conpasss').innerHTML="";
+
+    var fname = document.getElementById('fname').value;
+        if(fname ==""){
+            document.getElementById('fnamee').innerHTML="please enter a  valid firstname";
+            return false;
+
+        }
+        if((fname.length<=2) || (fname.length > 20)){
+            document.getElementById('fnamee').innerHTML="firstname must be 2 to 20 character";
+            return false;
+        }
+        
+
+    var lname = document.getElementById('lname').value;
+        if(lname ==""){
+            document.getElementById('lnamee').innerHTML="please enter a valid lastname";
+            return false;
+
+        }
+        if((lname.length<=2)|| (lname.length>20)){
+            document.getElementById('lnamee').innerHTML="lastname must be 2 to 20 charcater";
+            return false;
+            
+        }
+         
+    var email = document.getElementById('email').value;
+        if(email ==""){
+            document.getElementById('emaill').innerHTML="enter valid emailid";
+            return false;
+        }
+        if(email.indexOf('@')<=0){
+            document.getElementById('emaill').innerHTML=" @invalid position";
+            return false;
+        }
+        if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.'))
+        {
+            document.getElementById('emaill').innerHTML=".invalid position";
+            return false;
+
+        }
+        
+    var phone = document.getElementById('phone').value;
+        if(phone ==""){
+            document.getElementById('phoneee').innerHTML="please enter a mobilenumber";
+            return false;
+        }
+        if(isNaN(phone)){
+            document.getElementById('phoneee').innerHTML=" must write digit only not characters";
+            return false;
+        }
+        if(phone.length!=10){
+            document.getElementById('phoneee').innerHTML="mobile numbermust be 10 digit no.";
+            return false;
+        }
+        
+    var pass = document.getElementById('pass').value;
+        if(pass ==""){
+            document.getElementById('passs').innerHTML="please fill the  password field";
+            return false;
+        }
+        if((pass.length<=5) || (pass.length > 20)){
+            document.getElementById('passs').innerHTML="password must be 5 to 20 character";
+            return false;
+        }
+        if(pass!=conpass){
+            document.getElementById('conpasss').innerHTML=" password are not matching";
+            return false;
+        }
+
+        
+    var conpass = document.getElementById('conpass').value;
+        if(conpass ==""){
+            document.getElementById('conpasss').innerHTML="please fill the confirm password field";
+            return false;
+        }
+    } 
+      
+</script>
 </body>
 </html>
